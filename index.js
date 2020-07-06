@@ -21,7 +21,7 @@ function search() {
 		//return;
 	downloadingPage = 0;
 	jsonData = [];
-	var url = baseURL + 'api/search?tags=' + tags + '&page=' + downloadingPage + '&count=' + pageLimit + '&order=' + order + '&random=' + randomSeed;
+	var url = baseURL + 'api/search?fa_tags=' + tags + '&page=' + downloadingPage + '&count=' + pageLimit + '&order=' + order + '&random=' + randomSeed;
 
 	makeRequest(url, searchFinish);
 }
@@ -35,7 +35,7 @@ function searchFinish( data ) {
 function downloadNextJson() {
 	downloading = true;
 	downloadingPage++;
-	var url = baseURL + 'api/search?tags=' + tags + '&page=' + downloadingPage + '&count=' + pageLimit + '&order=random-seed&random=' + randomSeed;
+	var url = baseURL + 'api/search?fa_tags=' + tags + '&page=' + downloadingPage + '&count=' + pageLimit + '&order=random-seed&random=' + randomSeed;
 
 	makeRequest(url, downloadFinish);
 }
