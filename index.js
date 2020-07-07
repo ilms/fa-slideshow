@@ -81,7 +81,7 @@ function updateSlide() {
 	crrentSlide.onload = function () {
         document.getElementById('current-image').classList.add('loaded');
     };
-	crrentSlide.setAttribute("src", getJson(slideIndex).content_url);
+	crrentSlide.setAttribute("src", 'http:' + getJson(slideIndex).content_url);
 	document.getElementById('source-button').setAttribute("href", 'https://www.furaffinity.net/view/' + getJson(slideIndex)['id']);
 	updateCache();
 }
@@ -112,7 +112,6 @@ function closeMenu() {
 	}, 1500);
 }
 function updateCache() {
-	return; // TODO remove, temporary disabled cache
 	var cache = document.getElementById("cache");
 	while (cache.firstChild) {
 		cache.removeChild(cache.firstChild);
