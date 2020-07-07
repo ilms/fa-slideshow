@@ -10,7 +10,7 @@ var baseURL = 'http://localhost:8000/';
 var order = 'random-seed';
 var randomSeed = 4;
 var jsonData = [];
-var fallbackJson = JSON.parse('{"id":0,"content_url":"loading.png"}');
+var fallbackJson = JSON.parse('{"id":0,"content_url":"//ilms.github.io/fa-slideshow/loading.png"}');
 function search() {
 	endOfDownload = false;
 	downloading = true;
@@ -118,14 +118,14 @@ function updateCache() {
 	}
 	for (var i = 0; i < 20; i++) {
 		var img = document.createElement('img');
-		img.setAttribute("src", getJson(slideIndex + i + 1).content_url);
+		img.setAttribute("src", 'http:' + getJson(slideIndex + i + 1).content_url);
 		cache.appendChild(img);
 	}
 	for (var i = 0; i < 10; i++) {
 		var json = getJson(slideIndex - i - 1);
 		if (json != 0) {
 			var img = document.createElement('img');
-			img.setAttribute("src", json.content_url);
+			img.setAttribute("src", 'http:' + json.content_url);
 			cache.appendChild(img);
 		}
 	}
